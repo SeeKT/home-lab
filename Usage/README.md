@@ -6,6 +6,7 @@ Proxmox 環境の利用方法について。
 - [既存の仮想マシンのインポート](./import/README.md)
 - [NASの導入](./NAS/README.md)
 - [VLANの設定](./VLAN/README.md)
+- [VMの登録解除](./Unassign/README.md)
 
 ---
 
