@@ -7,6 +7,7 @@ Proxmox 環境の利用方法について。
 - [NASの導入](./NAS/README.md)
 - [VLANの設定](./VLAN/README.md)
 - [VMの登録解除](./Unassign/README.md)
+- [ポートミラーリング設定](./port-mirror/README.md)
 
 ---
 

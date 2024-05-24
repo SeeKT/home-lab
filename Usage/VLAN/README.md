@@ -62,6 +62,8 @@ abb8ae84-ce2c-40d7-9ae2-7b618f57d543
 
 ここで、VM上に割り当てた Network Device と OVS Bridge 上のポートは `fwln<vm id>o<device number>` のような対応になっている。例えば、VM ID 1001 の VM の net0 に OVS Bridge を割り当てたとき、ポートは `fwln1001o0` となっている。
 
+(注) 上記の命名規則は Firewall にチェックが入っているため。
+
 ---
 
 [Usage](../README.md)
