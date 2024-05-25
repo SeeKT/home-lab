@@ -8,6 +8,8 @@
 - [Docker](./Docker/README.md)
 - [GitLabサーバ](./GitLab/README.md)
 - [Elasticsearch](./Elasticsearch/README.md)
+- [Suricata](./Suricata/README.md)
+- [auditd](./auditd/README.md)
 
 ---
 
