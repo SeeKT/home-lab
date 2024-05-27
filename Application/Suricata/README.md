@@ -107,7 +107,7 @@ pcap:
 |---|---|---|
 |`debian-target`|`ens18`|`192.168.50.75/24`|
 |`debian-target`|`ens19`|`192.168.100.75/24`|
-|`win7-target`|-|`192.168.50.7/24`|
+|`win7-target`|-|`192.168.100.7/24`|
 |`debian-suricata`|`ens18`|`192.168.50.50/24`|
 |`debian-suricata`|`ens19`|-|
 |`debian-caldera`|`ens18`|`192.168.50.80/24`|

@@ -10,6 +10,9 @@
 - [Elasticsearch](./Elasticsearch/README.md)
 - [Suricata](./Suricata/README.md)
 - [auditd](./auditd/README.md)
+- [Caldera](./Caldera/README.md)
+- [OPNsense](./opnsense/README.md)
+- [VNC](./vnc/README.md)
 
 ---
 
