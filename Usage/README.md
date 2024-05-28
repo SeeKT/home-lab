@@ -9,6 +9,7 @@ Proxmox 環境の利用方法について。
 - [VMの登録解除](./Unassign/README.md)
 - [ポートミラーリング設定](./port-mirror/README.md)
 - [スイッチングハブ](./Switch/README.md)
+- [バックアップ](./backup/README.md)
 
 ---
 
