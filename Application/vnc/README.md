@@ -10,11 +10,11 @@ Windows に VNC サーバを導入し、リモートから操作可能にする�
 
 ![](./01_env.drawio.png)
 
-ただし、図中の Home-net はインターネット接続可能なネットワークで、Lab-net は実験用に構築した内部ネットワークである。
+ただし、図中の Home-net はインターネット接続可能なネットワークで、Lab-net, Exp-net は実験用に構築した内部ネットワークである。
 
 `win11-desktop` は、普段使いしているデスクトップPC (物理機器) である。
 
-`win10-target` は物理機器で、実験線用の Network Switch で、VLAN 50 と VLAN 100 のポートに接続している。各機器の NIC と IP アドレスの対応を以下に示す。
+`win10-target` は物理機器で、実験線用の Network Switch で、VLAN 50 (Lab-net) と VLAN 100 (Exp-net) のポートに接続している。各機器の NIC と IP アドレスの対応を以下に示す。
 
 |機器|NIC|IPアドレス|
 |---|---|---|
