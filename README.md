@@ -9,6 +9,7 @@
 2024/5時点では、2台のホストでクラスタを構成している。
 
 ## リンク
+- [免責事項](./policy/README.md)
 - [設計思想](./Philosophy/README.md)
 - [利用方法](./Usage/README.md)
 - [アプリケーション](./Application/README.md)

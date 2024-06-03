@@ -209,7 +209,15 @@ logging:
       - file
 ```
 
-また、`elasticsearch.hosts` などに追加されていないIPアドレス (例：実験用ネットワークのIPアドレス) があれば追加する。
+また、`elasticsearch.hosts` などに追加されていないIPアドレス (例：実験用ネットワークのIPアドレス) があれば追加する。例えば、今回の環境では以下。
+
+```yml
+# This section was automatically generated during setup.
+elasticsearch.hosts: ['https://192.168.10.40:9200', 'https://192.168.50.40:9200']
+elasticsearch.serviceAccountToken: AAEAAWVsYXN0aWMva2liYW5hL2Vucm9sbC1wcm9jZXNzLXRva2VuLTE3MTY2MTczMDU4Nzk6M2NMcGZfZVRSaDZrX3RqaDgzNno1dw
+elasticsearch.ssl.certificateAuthorities: [/var/lib/kibana/ca_1716617307174.crt]
+xpack.fleet.outputs: [{id: fleet-default-output, name: default, is_default: true, is_default_monitoring: true, type: elasticsearch, hosts: ['https://192.168.10.40:9200', 'https://192.168.50.40:9200'], ca_trusted_fingerprint: 3d9da99c65eddc099ecafdc2ae6b5d820189ab5ee7cba923a1b4eecda42991f3}]
+```
 
 なお、`/mnt/Mars/10_server/15_elastic/log/kibana/` は `/var/log/kibana` と所有者、権限を合わせる。
 
