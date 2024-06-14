@@ -13,6 +13,7 @@
 - [Caldera](./Caldera/README.md)
 - [OPNsense](./opnsense/README.md)
 - [VNC](./vnc/README.md)
+- [Sysmon](./Sysmon/README.md)
 
 ---
 
