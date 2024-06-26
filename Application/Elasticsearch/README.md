@@ -302,6 +302,47 @@ Dashboards を使って状態を監視できる。
 
 ![](./05_dashboard.png)
 
+## トラブルシューティング
+### Kibana の起動に失敗する
+一時期から Kibana の起動に失敗するようになった。
+
+![](./06_kibana_fail_to_start.png)
+
+エラーメッセージを見ると、ログファイルあたりが失敗しているようなので、以下のように対応。
+
+1. `kibana` を `disable` にする
+2. root ユーザの `crontab` を以下のように編集
+
+```
+@reboot sh /root/kibana-start.sh
+```
+
+ただし、`kibana-start.sh` は以下のシェルスクリプトである。
+
+```sh
+#!/bin/sh
+mv /mnt/Mars/10_server/15_elastic/log/kibana/kibana.log /mnt/Mars/10_server/15_elastic/log/kibana/"kibana.log.$(date +%Y%m%d%H%M)"
+res1=$?
+if [ $res1 -eq 0 ]; then
+  echo "Succeed in renaming kibana.log"
+  systemctl start kibana
+  res2=$?
+  if [ $res2 -eq 0 ]; then
+    echo "Succeed in starting kibana.service"
+  else
+    echo "Fail to start kibana.service"
+  fi
+else
+  echo "Fail to rename"
+fi
+```
+
+上記の設定は、再起動後に `kibana.log` の名前を変更して、再起動のたびに `kibana.log` を作り直すことで、エラーを回避するためのものである。
+
+上記設定後、以下のように Kibana の起動に成功する。
+
+![](./07_kibana_sh.png)
+
 
 
 ---
