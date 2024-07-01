@@ -137,6 +137,14 @@ Address:  192.168.10.2
 Address:  192.168.10.3
 ```
 
+## バックアップ設定
+`/etc/nsd` 以下を NFS 共有した NAS 上の共有フォルダに定期的にバックアップする。root ユーザの `crontab -e` で末尾に以下を追加。
+
+
+```
+0 5 * * * rsync -ahv /etc/nsd /mnt/Mars/10_server/16_dns
+```
+
 ---
 
 [Application](../README.md)
