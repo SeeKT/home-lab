@@ -79,6 +79,14 @@ gitlab-pvehome exited with code 0
 00 5 * * * rsync -ahv /mnt/Mars/10_server/14_gitlab /mnt/Mars/10_server/15_gitlab_backup
 ```
 
+## ロールバック手順
+GitLab サーバが起動しなくなった後のロールバック手順をまとめる。
+
+1. `/etc/fstab` から、外部の NAS をマウントしている部分をコメントアウト
+2. 再起動し、`df -h` コマンドで、外部 NAS がマウントされていないことを確認
+3. GitLab インストール直後のスナップショットにロールバックし、再起動
+4. 問題なく起動することを確認
+
 ---
 
 [Application](../README.md)
