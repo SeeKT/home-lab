@@ -1,6 +1,26 @@
 # LDAPサーバ
 GitLab で LDAPアカウントを使うために、LDAPサーバを導入する。
 
+- [LDAPサーバ](#ldapサーバ)
+  - [参考](#参考)
+  - [インストール](#インストール)
+  - [設定](#設定)
+    - [OpenLDAPの設定](#openldapの設定)
+    - [サービスの再起動と自動起動](#サービスの再起動と自動起動)
+    - [Base group の追加](#base-group-の追加)
+    - [LDAPユーザアカウントの追加](#ldapユーザアカウントの追加)
+      - [パスワード生成](#パスワード生成)
+      - [ユーザ設定ファイルの作成](#ユーザ設定ファイルの作成)
+      - [アカウントの追加](#アカウントの追加)
+  - [LDAP Account Manager](#ldap-account-manager)
+    - [インストール](#インストール-1)
+    - [設定](#設定-1)
+      - [PHP の設定ファイルの編集](#php-の設定ファイルの編集)
+      - [Apache2 の設定ファイルの編集](#apache2-の設定ファイルの編集)
+      - [LDAP Account Manager の設定](#ldap-account-manager-の設定)
+  - [LDAPクライアントの設定](#ldapクライアントの設定)
+
+
 ## 参考
 - [OpenLDAP : LDAP サーバーの設定](https://www.server-world.info/query?os=Debian_12&p=openldap&f=1)
 - [How to Install OpenLDAP Server and LDAP Account Manager on Debian 12](https://www.howtoforge.com/how-to-install-openldap-server-on-debian-12/)

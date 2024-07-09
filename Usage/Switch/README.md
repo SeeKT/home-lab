@@ -3,6 +3,23 @@
 
 VLAN 対応のネットワークスイッチとして、[NETGEAR ギガビット (GS108E)](https://www.netgear.com/jp/business/wired/switches/plus/gs108e/) を用いている。
 
+- [スイッチングハブ](#スイッチングハブ)
+  - [参考](#参考)
+  - [構成](#構成)
+  - [Proxmox 側の設定](#proxmox-側の設定)
+  - [ネットワークスイッチ側の設定](#ネットワークスイッチ側の設定)
+    - [VLAN作成](#vlan作成)
+    - [VLANメンバーシップ](#vlanメンバーシップ)
+    - [Port VLAN ID (PVID) の設定](#port-vlan-id-pvid-の設定)
+  - [ポートミラーリング (スイッチ側)](#ポートミラーリング-スイッチ側)
+    - [ポートミラーリングの設定](#ポートミラーリングの設定)
+    - [ポートミラーリングのテスト (1)](#ポートミラーリングのテスト-1)
+      - [物理 NIC](#物理-nic)
+      - [VM](#vm)
+  - [ポートミラーリング (OVS Bridge 側)](#ポートミラーリング-ovs-bridge-側)
+    - [ポートミラーリングのテスト (2)](#ポートミラーリングのテスト-2)
+
+
 ## 参考
 - [タグ VLAN を設定したスイッチ同士の接続](https://www.downloads.netgear.com/files/answer_media/jp/support/switch/VLAN_trunk_setting_ex.pdf)
 

@@ -1,6 +1,19 @@
 # VNC
 Windows に VNC サーバを導入し、リモートから操作可能にする。
 
+- [VNC](#vnc)
+  - [参考](#参考)
+  - [検証環境](#検証環境)
+  - [VNC サーバ](#vnc-サーバ)
+    - [インストール](#インストール)
+    - [設定](#設定)
+  - [VNC クライアント](#vnc-クライアント)
+    - [インストール](#インストール-1)
+    - [接続](#接続)
+  - [OPNsense を使って自宅ネットワークからアクセスできるように設定](#opnsense-を使って自宅ネットワークからアクセスできるように設定)
+    - [テスト](#テスト)
+
+
 ## 参考
 - [ネットワーク経由でWindows 10 / 11を操作する（VNC編）](https://pcmanabu.com/windows-10-vnc/)
 - [KVM : VNC クライアント : Debian](https://www.server-world.info/query?os=Debian_12&p=kvm&f=7)

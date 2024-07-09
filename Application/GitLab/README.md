@@ -1,6 +1,16 @@
 # GitLabサーバ
 Docker Compose を使って自宅内検証用環境に GitLab を導入する。
 
+- [GitLabサーバ](#gitlabサーバ)
+  - [参考](#参考)
+  - [前提](#前提)
+  - [インストール](#インストール)
+  - [トラブルシューティング](#トラブルシューティング)
+    - [コンテナが起動しない](#コンテナが起動しない)
+  - [バックアップ設定](#バックアップ設定)
+  - [ロールバック手順](#ロールバック手順)
+
+
 ## 参考
 - [Install GitLab by using Docker](https://docs.gitlab.com/ee/install/docker.html)
 - [GitLab をインストールしよう! (Docker Image)](https://qiita.com/masakura/items/e29f1dd4794bcaf066ce)
@@ -39,6 +49,8 @@ Docker がインストール済とする。また、GitLab のホームディレ
 初期パスワードは、`$GITLAB_HOME/config/initial_root_password` に記載されている。root/初期パスワードでログイン可能。
 
 ## トラブルシューティング
+### コンテナが起動しない
+
 コンテナを起動しようとしたところ、以下エラーが出力された。
 
 ```
