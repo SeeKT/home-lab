@@ -1,7 +1,8 @@
 # P2V (Proxmox + Clonezilla)
-Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築可能か (P2V 可能か) 検証する。
+Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築可能か (P2V 可能か) 検証する。特に、Windows マシンの P2V について、試行錯誤的に検証した。
 
 - [P2V (Proxmox + Clonezilla)](#p2v-proxmox--clonezilla)
+  - [検証結果のまとめ](#検証結果のまとめ)
   - [参考](#参考)
   - [検証環境](#検証環境)
   - [手順](#手順)
@@ -14,7 +15,21 @@ Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築�
     - [VM の作成](#vm-の作成)
     - [Clonezilla を用いたリストア](#clonezilla-を用いたリストア)
   - [動作確認](#動作確認)
+  - [原因の切り分け](#原因の切り分け)
+    - [Windows 10 マシンでの P2V の確認](#windows-10-マシンでの-p2v-の確認)
+    - [VM側の設定変更](#vm側の設定変更)
 
+## 検証結果のまとめ
+- Clonezilla のバックアップからリストアすることで P2V できる。ただし、VM側で以下のように設定しなおす必要がある
+  - Hardware
+    - BIOS: OVMF (UEFI)
+    - EFI Disk を追加
+    - Hard Disk は IDE にしておく
+      - 執筆者の環境では SCSI ではブルースクリーンになったが、IDE に変更して解決した
+  - Options
+    - OS Type: Microsoft Windows の該当するバージョンに変更
+- VM に Network Device を割り当てても認識されていないので、対処する必要がある
+  - [Windows VirtIO Drivers](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers) をインストールする必要がある？
 
 ## 参考
 - [Restore disk image](https://clonezilla.org/show-live-doc-content.php?topic=clonezilla-live/doc/02_Restore_disk_image)
@@ -143,6 +158,30 @@ BIOS を UEFI に変更し、EFI Disk を追加する。
 
 ![](./07_reset_fail.png)
 
+## 原因の切り分け
+### Windows 10 マシンでの P2V の確認
+原因の切り分けのため、Windows10 マシンのバックアップからの restore でも VM の正常起動ができないかを確認する。
+
+同様にブルースクリーンになり、回復もできなかった。
+
+![](./08_blue.png)
+
+### VM側の設定変更
+VM 側で OS のタイプを指定できるので設定を以下のように変更したところ、起動した。
+
+- Hard Disk: SCSI -> IDE
+- Options:
+  - OS Type: Microsoft Windows 11/2022/2025
+
+![](./09_os_type.png)
+
+ただし、ネットワークドライバがインストールされていないのか、Network Device を割り当ててもネットワークに接続できなかった。
+
+Windows 10 でも同様の問題で起動できなかった可能性があるため、設定を変更して確認した。ディスクエラーが発生していたが、確認後問題なく起動できた。ただし、Network Device を割り当ててもネットワークに接続できないのは同様。
+
+![](./10_disk_error.png)
+
+![](./11_win10.png)
 
 ---
 

@@ -33,6 +33,17 @@
 
 ![](./03_blue_screen.png)
 
+## 対処
+[Clonezilla](../clonezilla/README.md) で行った対処で起動可能かを検証する。VM 側の設定を以下のように変更する。
+
+- Hard Disk: SCSI -> IDE
+- Options:
+  - OS Type: Microsoft Windows 11/2022/2025
+
+上記対応によって、OSが問題なく起動することを確認した。
+
+![](./04_os.png)
+
 ---
 
 [P2V](../README.md)
