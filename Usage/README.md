@@ -10,6 +10,7 @@ Proxmox 環境の利用方法について。
 - [ポートミラーリング設定](./port-mirror/README.md)
 - [スイッチングハブ](./Switch/README.md)
 - [バックアップ](./backup/README.md)
+- [P2V](./p2v/README.md)
 
 ---
 

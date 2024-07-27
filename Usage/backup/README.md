@@ -42,7 +42,7 @@ Clonezilla live (VGA 800x600) で起動。CLIの画面で操作していく。
   - 今回： `/volume2/Mars/90_backup/95_windows_backup`
 - 拡張パラメータ：Beginner
 - モード：savedisk
-- 保存名：任意 ()
+- 保存名：任意
 - コピー元のローカルディスク：sda (自分の環境に合わせる)
 - 圧縮オプション：`z1p`
 - チェック・修復：`-sfsck`

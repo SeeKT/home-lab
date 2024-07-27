@@ -15,6 +15,8 @@
 - [VNC](./vnc/README.md)
 - [Sysmon](./Sysmon/README.md)
 - [Virtual Industrial Cybersecurity Lab](./icslab/README.md)
+- [Malcolm](./malcolm/README.md)
+- [Arkime](./arkime/README.md)
 
 ---
 
