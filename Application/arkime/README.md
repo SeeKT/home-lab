@@ -55,7 +55,7 @@ $ sudo apt install ./arkime_5.3.0-1.debian12_amd64.deb
 
 - Semicolon ';' separated list of interfaces to monitor: ens19;ens21
 - Install Elasticsearch server locally: no
-- Elasticsearch server URL: http[s]://192.168.50.40:9200
+- Elasticsearch server URL: `https://192.168.50.40:9200`
 - Elasticsearch user: elastic
 - Elasticsearch password: `<password>`
 - Password to encrypt S2S and other things: `<password>`

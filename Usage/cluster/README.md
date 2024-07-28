@@ -5,10 +5,10 @@
 [![](https://img.youtube.com/vi/rMKwEOL2HSA/0.jpg)](https://www.youtube.com/watch?v=rMKwEOL2HSA)
 
 ### 手順
-1. Datacenter > Cluster > Create Cluster でクラスタを作成
+1. (クラスタを作成する場合) Datacenter > Cluster > Create Cluster でクラスタを作成
    - Cluster Name と Cluster Network を設定
 2. 作成したクラスタの Join Information をコピー
-3. クラスタに参加したいノードで Join Cluster からクラスタに参加
+3. (クラスタに参加したい場合) クラスタに参加したいノードで Datacenter > Cluster > Join Cluster からクラスタに参加
    - Information にコピーした情報をペースト。クラスタを作成したノードのアドレス、パスワードを入力
    - エラーが出る場合は、VMの電源を落とす、VMの設定ファイル `/etc/pve/nodes/[node name]/qemu-server/*.conf` を削除 (移動しておいて後で戻す)
 

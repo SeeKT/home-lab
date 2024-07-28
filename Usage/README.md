@@ -2,6 +2,7 @@
 Proxmox 環境の利用方法について。
 
 ## リンク
+- [最初にやること](./initial/README.md)
 - [クラスタの構築](./cluster/README.md)
 - [既存の仮想マシンのインポート](./import/README.md)
 - [NASの導入](./NAS/README.md)

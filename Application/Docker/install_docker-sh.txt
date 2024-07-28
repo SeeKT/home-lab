@@ -1,0 +1,29 @@
+#!/bin/bash
+# required to execute user with sudo
+# Password
+printf "password: "
+read -s password
+# Set up Docker's apt repository
+echo "$password" | sudo -S apt-get update
+sudo -S apt-get -y install ca-certificates curl
+sudo -S install -m 0755 -d /etc/apt/keyrings
+sudo -S curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo -S chmod a+r /etc/apt/keyrings/docker.asc
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo -S tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo -S apt-get update
+
+# Install the Docker packages
+sudo -S apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# auto start
+sudo -S systemctl unmask docker.service
+sudo -S systemctl enable docker
+sudo -S systemctl is-enabled docker
+
+# run as user
+sudo -S usermod -aG docker $USER
+sudo -S gpasswd -a $USER docker

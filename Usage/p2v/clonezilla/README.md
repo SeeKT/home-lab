@@ -44,7 +44,7 @@ Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築�
 
 ## 手順
 1. Clonezilla で、NAS にイメージを保存
-   - 参考：[バックアップ](../backup/README.md)
+   - 参考：[バックアップ](../../backup/README.md)
 2. 保存したイメージをコピーしたハードディスクを作成
 3. Proxmox で受け皿となる VM を作成
    - ディスクサイズはクローン元と同容量または大きいサイズに設定
