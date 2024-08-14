@@ -27,7 +27,7 @@ Open vSwitch を使ってポートミラーリングする設定をまとめる�
 ## 検証環境
 今回は、Proxmox 上に以下の検証環境を構築した。
 
-![](./01_env.drawio.png)
+![](fig/01_env.drawio.png)
 
 なお、`tap1001i0` などは `ovs-vsctl` コマンドを使って調べられる。なお、環境構築の手順については後述。
 
@@ -63,14 +63,14 @@ Proxmox にはデフォルトでは Open vSwitch がインストールされて�
 ### 2. OVS Bridge の設定
 OVS Bridge を作成し、ポートを割り当てる。
 
-![](./02_bridge.png)
+![](fig/02_bridge.png)
 
 上図の例では、`vmbr2` という OVS Bridge に `enx000ec6954922` という物理 NIC を割り当てている。
 
 ### 3. VM の Network Device への bridge の割り当て
 VM の Network Device に bridge を割り当てる。
 
-![](./03_vm.png)
+![](fig/03_vm.png)
 
 ここで、Firewall のチェックを外すようにする。
 
@@ -128,7 +128,7 @@ statistics          : {tx_bytes=0, tx_packets=0}
 
 問題なくパケットがキャプチャできることが確認された。
 
-![](./04_a_result.png)
+![](fig/04_a_result.png)
 
 ### (B) VLAN 設定をしたときに VLAN タグが付与されたパケットがキャプチャされるか
 `ovs01`, `ovs02`, `mirror01` で IP アドレスと VLAN タグを以下のように設定し、`mirror01` でキャプチャする。
@@ -149,7 +149,7 @@ VLAN タグを付与する等、ネットワークまわりの設定を変えた
 
 再度ミラーリングの設定をし直し、キャプチャする。
 
-![](./05_b_result.png)
+![](fig/05_b_result.png)
 
 VLANタグ (802.1Q) も問題なくキャプチャされることが確認された。
 
@@ -163,7 +163,7 @@ VLANタグ (802.1Q) も問題なくキャプチャされることが確認され
 |`ovs02`|`192.168.5.30`|`10`|
 |`mirror01`|-|-|
 
-![](./06_c_result.png)
+![](fig/06_c_result.png)
 
 これも問題なくキャプチャされた。
 

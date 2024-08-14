@@ -37,7 +37,7 @@ $ ./script/start
 
 起動後、`http[s]://localhost` にアクセスすると以下のような画面が表示される。
 
-![](./01_malcolm.png)
+![](fig/01_malcolm.png)
 
 RAM 16GB でもかなり重いので、32GB程度割り当てるのが良いと考えられる。
 

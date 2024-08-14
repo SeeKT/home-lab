@@ -12,7 +12,7 @@
 ## NAPT
 WAN 側の機器から LAN 側の機器に接続するために NAPT を使う。
 
-![](./01_napt.png)
+![](fig/01_napt.png)
 
 ### 参考
 - [How to Configure Port Forwarding For SSH and RDP Services on Custom Ports](https://www.zenarmor.com/docs/network-security-tutorials/how-to-configure-opnsense-nat#how-to-configure-port-forwarding-for-ssh-and-rdp-services-on-custom-ports)
@@ -39,9 +39,9 @@ OPNsense の Firewall > NAT > Port Forward でルールを追加する。
 - NAT reflection: Enable
 - Filter rule association: Add associated filter rule
 
-![](./02_portforward_01.png)
+![](fig/02_portforward_01.png)
 
-![](./03_portforward_02.png)
+![](fig/03_portforward_02.png)
 
 ### 実際に行った設定
 - [VNC](../../vnc/README.md)

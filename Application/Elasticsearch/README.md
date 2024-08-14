@@ -240,7 +240,7 @@ drwxr-s---  2 kibana            kibana            4096  5月  7 15:18 kibana
 ### 起動確認
 `http[s]://<host address>:5601` にアクセスする。
 
-![](./01_kibana_top.png)
+![](fig/01_kibana_top.png)
 
 ## Fleet
 Fleet Server と Elastic Agent を使う。
@@ -258,7 +258,7 @@ Home > Management > Fleet > Add Fleet Server に進む。
 
 Fleet Server インストール後は以下のような画面が表示される。
 
-![](./02_fleet_server.png)
+![](fig/02_fleet_server.png)
 
 ### Elastic Agent
 Kibana で可視化したいホストに Elastic Agent を導入する。
@@ -271,7 +271,7 @@ Home > Management > Fleet > Agent policies > Create agent policy で policy を�
 
 例として、linux host に導入予定のポリシーを以下のように作成した。
 
-![](./03_linux-policy.png)
+![](fig/03_linux-policy.png)
 
 #### Agent の追加
 Home > Management > Fleet > Agent policies > Agents > Add agent で agent を追加する。
@@ -296,17 +296,17 @@ Home > Management > Fleet > Agent policies > Agents > Add agent で agent を追
 
 Agent を追加すると、Fleet > Agents に追加される。
 
-![](./04_agent_example.png)
+![](fig/04_agent_example.png)
 
 Dashboards を使って状態を監視できる。
 
-![](./05_dashboard.png)
+![](fig/05_dashboard.png)
 
 ## トラブルシューティング
 ### Kibana の起動に失敗する
 一時期から Kibana の起動に失敗するようになった。
 
-![](./06_kibana_fail_to_start.png)
+![](fig/06_kibana_fail_to_start.png)
 
 エラーメッセージを見ると、ログファイルあたりが失敗しているようなので、以下のように対応。
 
@@ -341,7 +341,7 @@ fi
 
 上記設定後、以下のように Kibana の起動に成功する。
 
-![](./07_kibana_sh.png)
+![](fig/07_kibana_sh.png)
 
 
 

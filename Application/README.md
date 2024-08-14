@@ -2,21 +2,22 @@
 検証用環境に導入したアプリケーションについて
 
 ## リンク
-- [Wikiサーバ](./Wiki/README.md)
-- [DNSサーバ](./DNS/README.md)
-- [LDAPサーバ](./LDAP/README.md)
-- [Docker](./Docker/README.md)
-- [GitLabサーバ](./GitLab/README.md)
-- [Elasticsearch](./Elasticsearch/README.md)
-- [Suricata](./Suricata/README.md)
-- [auditd](./auditd/README.md)
-- [Caldera](./Caldera/README.md)
-- [OPNsense](./opnsense/README.md)
-- [VNC](./vnc/README.md)
-- [Sysmon](./Sysmon/README.md)
-- [Virtual Industrial Cybersecurity Lab](./icslab/README.md)
-- [Malcolm](./malcolm/README.md)
-- [Arkime](./arkime/README.md)
+- [Wikiサーバ](Wiki/)
+- [DNSサーバ](DNS/)
+- [LDAPサーバ](LDAP/)
+- [Docker](Docker/)
+- [GitLabサーバ](GitLab/)
+- [Elasticsearch](Elasticsearch/)
+- [Suricata](Suricata/)
+- [auditd](auditd/)
+- [Caldera](Caldera/)
+- [OPNsense](opnsense/)
+- [VNC](vnc/)
+- [Sysmon](Sysmon/)
+- [Virtual Industrial Cybersecurity Lab](icslab/)
+- [Malcolm](malcolm/)
+- [Arkime](arkime/)
+- [Lynis](lynis/)
 
 ---
 

@@ -9,7 +9,7 @@
 ## 構成
 以下構成で、Windows 11 を仮想化する。
 
-![](./01_config.png)
+![](fig/01_config.png)
 
 
 ## 仮想化手順 (Disk2vhd)
@@ -20,7 +20,7 @@
    - Use Volume Shadow Copy にチェックを入れる
      - [メモ.　手間はかかるが金いらずのV2V: VMwareのWindows VMをHyper-Vへ (その1)](https://www.say-tech.co.jp/contents/blog/yamanxworld/2024memo08)
    - VHD file は、NAS 上のディレクトリに保存する
-    ![](./02_p2v.png)
+    ![](fig/02_p2v.png)
 3. VM を作成し、`vhdx` ファイルをインポートする
    - BIOS は UEFI で作成
    - 以下コマンドで `vhdx` ファイルをインポート
@@ -31,7 +31,7 @@
 ## 動作確認
 起動したところ、ブルースクリーンになった。
 
-![](./03_blue_screen.png)
+![](fig/03_blue_screen.png)
 
 ## 対処
 [Clonezilla](../clonezilla/README.md) で行った対処で起動可能かを検証する。VM 側の設定を以下のように変更する。
@@ -42,7 +42,7 @@
 
 上記対応によって、OSが問題なく起動することを確認した。
 
-![](./04_os.png)
+![](fig/04_os.png)
 
 ---
 

@@ -9,9 +9,9 @@
 2. アクセスポートを作成する
    - Create: Linux VLAN で Name に `<bridge name>.<tag>` を設定する。このように作成すると、VLAN Raw Device が `<bridge name>` でVLANタグが `<tag>` の VLAN を作成できる
 
-![](./01_linux_bridge.jpg)
+![](fig/01_linux_bridge.jpg)
 
-![](./02_setting_vlan.jpg)
+![](fig/02_setting_vlan.jpg)
 
 ## Open vSwitch を使う
 ### 参考
@@ -29,11 +29,11 @@
 3. VLAN設定
    - 各VMの Network Device の VLAN Tag にタグを指定する
 
-![](./03_ve_setting.png)
+![](fig/03_ve_setting.png)
 
-![](./04_vm_setting.png)
+![](fig/04_vm_setting.png)
 
-![](./05_vlan_tag.png)
+![](fig/05_vlan_tag.png)
 
 
 ### 設定確認方法

@@ -35,7 +35,7 @@
 ## 構成
 以下構成とする。
 
-![](./01_config.png)
+![](fig/01_config.png)
 
 各機器の用途は以下。
 
@@ -84,7 +84,7 @@ OpenPLC をインストールする。一時的に Home Network に接続する�
 
 インストール後、動作確認のために `htt[p]://localhost:8080` にアクセスする。
 
-![](./02_openplc.png)
+![](fig/02_openplc.png)
 
 #### NAPT 設定
 Home Network 上の機器からアクセスできるように、OPNsense で NAPT の設定をする。OPNsense の Firewall > NAT > Port Forward でルールを追加する。
@@ -161,7 +161,7 @@ ScadaBR をインストールする。一時的に Home Network に接続する�
 # /opt/tomcat6/apache-tomcat-6.0.53/bin/startup.sh
 ```
 
-![](./03_scadabr.png)
+![](fig/03_scadabr.png)
 
 自動起動の設定をする。`crontab -e` で再起動後に起動用スクリプトを実行するように設定する。
 
@@ -208,14 +208,14 @@ Home Network 上の機器からアクセスできるように、OPNsense で NAP
 
 exe ファイルをダブルクリックしてインストールウィザードの通りにインストールする。
 
-![](./04_factoryio.png)
+![](fig/04_factoryio.png)
 
 ※ Windows10の方に導入予定だったが、スペック不足のため動作が不安定。今回は Windows11 を Experiment Network に接続した上で Factory I/O を導入する。
 
 #### Scene の作成
 [Virtual Industrial Cybersecurity Lab – Part 3: Simulating the Physical Process with Factory IO](https://rodrigocantera.com/en/virtual-industrial-cybersecurity-lab-part-3-simulating-the-physical-process-with-factory-io/) を参考に scene を作成する。
 
-![](./05_sample_factory.png)
+![](fig/05_sample_factory.png)
 
 #### Driver の設定
 F4 でメニューを表示し、Modbus TCP/IP Server を設定する。Configuration で以下のように設定する。
@@ -237,27 +237,27 @@ F4 でメニューを表示し、Modbus TCP/IP Server を設定する。Configur
 
 また、Sensors と Actuators を以下のように設定する。
 
-![](./06_sensors_actuators.png)
+![](fig/06_sensors_actuators.png)
 
 #### OpenPLC との接続
 OpenPLC で、Slave Device を設定する。
 
-![](./07_slave_device.png)
+![](fig/07_slave_device.png)
 
 ## PLC のロジックの設計
 ### OpenPLC Editor のダウンロード
 [ダウンロードサイト](https://autonomylogic.com/download) からダウンロードする。今回は、Home Network 上の My Machine にダウンロードする。
 
-![](./08_openplc_editor.png)
+![](fig/08_openplc_editor.png)
 
 ### サンプルプログラムの作成
 [Virtual Industrial Cybersecurity Lab – Part 4: Programming the Control Logic](https://rodrigocantera.com/en/virtual-industrial-cybersecurity-lab-part-4-program-the-control-logic/) をベースにサンプルプログラムを作成する。
 
-![](./09_variables.png)
+![](fig/09_variables.png)
 
 上図のように、11個の変数を用意し、以下のラダーロジックを作成する。
 
-![](./10_ladder.png)
+![](fig/10_ladder.png)
 
 このラダープログラムをビルドし、OpenPLC Program (`*.st`) を作成する。作成したプログラムを OpenPLC にアップロードする。
 
@@ -268,11 +268,11 @@ OpenPLC で、Slave Device を設定する。
 - OpenPLC で PLC を Start する
 - OpenPLC の Monitoring タブを見る
 
-![](./11_monitoring.png)
+![](fig/11_monitoring.png)
 
 実際に動いている様子をキャプチャしたものを以下に示す。
 
-![](./12_factory.gif)
+![](fig/12_factory.gif)
 
 ---
 

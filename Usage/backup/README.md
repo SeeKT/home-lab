@@ -54,7 +54,7 @@ Clonezilla live (VGA 800x600) で起動。CLIの画面で操作していく。
 
 バックアップ後、NAS のディレクトリを確認するとバックアップがとれていることがわかる。
 
-![](./01_result.png)
+![](fig/01_result.png)
 
 
 

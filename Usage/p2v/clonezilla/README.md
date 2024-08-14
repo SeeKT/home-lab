@@ -40,7 +40,7 @@ Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築�
 ## 検証環境
 以下の環境で、Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築可能かを確認する。
 
-![](./01_config.png)
+![](fig/01_config.png)
 
 ## 手順
 1. Clonezilla で、NAS にイメージを保存
@@ -55,7 +55,7 @@ Clonezilla で取得したイメージを用いて Proxmox 上に VM を構築�
 ### イメージの保存
 今回は、Proxmox のストレージとなっている NAS 上の `/volume2/Mars/90_backup/95_windows_backup/2024-07-23-21-img-win11` 以下にイメージを保存した。手順は [バックアップ](../../backup/README.md) と同じなので省略。
 
-![](./02_backup.png)
+![](fig/02_backup.png)
 
 ### 保存したイメージのコピー
 作業用VM を使って以下作業を行う。これを行う理由は、Clonezilla でのリストアのときに `local_dev` からリストアする必要があるため、VM 側でバックアップをローカルのストレージ上にあるものとして認識させる必要があるためである。
@@ -85,7 +85,7 @@ Proxmox の Web UI で、Add > Hard Disk により追加する
 
 (Xfce の Debian の場合) アプリケーション > アクセサリ > ディスクでアプリケーションを開き、追加したディスクを開き、歯車マークをクリックして「パーティションを初期化」を選択する。
 
-![](./03_init_partition.png)
+![](fig/03_init_partition.png)
 
 - ボリューム名：任意
 - タイプ：NTFS
@@ -116,7 +116,7 @@ Proxmox の Web UI で、Add > Hard Disk により追加する
 
 インポート後、Proxmox の Web UI で Hardware > Unused disk を選択 > Add でハードディスクを追加する。
 
-![](./04_vm_config.png)
+![](fig/04_vm_config.png)
 
 ### Clonezilla を用いたリストア
 Clonezilla live (VGA 800x600) で起動し、CLI の画面で操作する。
@@ -145,18 +145,18 @@ Clonezilla live (VGA 800x600) で起動し、CLI の画面で操作する。
 ## 動作確認
 起動できるか確認する。
 
-![](./05_check.png)
+![](fig/05_check.png)
 
 のように起動しないことがある。これは、UEFIマシンの場合、Proxmox のゲスト側でもそのように設定する必要があるためと予想される (参考：[UEFIマシンからのP2Vで気を付けること（Proxmox）](https://qiita.com/minoden_works/items/8736aa0252563047d4ae))。
 
 BIOS を UEFI に変更し、EFI Disk を追加する。
 
-![](./06_uefi.png)
+![](fig/06_uefi.png)
 
 
 修正したところ起動はしたが Factory Reset が必要と表示され、なおかつ Factory Reset も失敗した。
 
-![](./07_reset_fail.png)
+![](fig/07_reset_fail.png)
 
 ## 原因の切り分け
 ### Windows 10 マシンでの P2V の確認
@@ -164,7 +164,7 @@ BIOS を UEFI に変更し、EFI Disk を追加する。
 
 同様にブルースクリーンになり、回復もできなかった。
 
-![](./08_blue.png)
+![](fig/08_blue.png)
 
 ### VM側の設定変更
 VM 側で OS のタイプを指定できるので設定を以下のように変更したところ、起動した。
@@ -173,15 +173,15 @@ VM 側で OS のタイプを指定できるので設定を以下のように変�
 - Options:
   - OS Type: Microsoft Windows 11/2022/2025
 
-![](./09_os_type.png)
+![](fig/09_os_type.png)
 
 ただし、ネットワークドライバがインストールされていないのか、Network Device を割り当ててもネットワークに接続できなかった。
 
 Windows 10 でも同様の問題で起動できなかった可能性があるため、設定を変更して確認した。ディスクエラーが発生していたが、確認後問題なく起動できた。ただし、Network Device を割り当ててもネットワークに接続できないのは同様。
 
-![](./10_disk_error.png)
+![](fig/10_disk_error.png)
 
-![](./11_win10.png)
+![](fig/11_win10.png)
 
 ---
 

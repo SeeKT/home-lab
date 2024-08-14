@@ -21,7 +21,7 @@
 
 インストール後は以下のようなGUIから操作可能。
 
-![](./01_after_install.png)
+![](fig/01_after_install.png)
 
 ## 設定
 [OPNsense の設定](./settings/README.md) に記載。

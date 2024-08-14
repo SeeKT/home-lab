@@ -107,7 +107,7 @@ pcap:
 ### テスト環境
 以下のテスト環境を構築する。
 
-![](./01_env.drawio.png)
+![](fig/01_env.drawio.png)
 
 各 VM の用途を以下に示す。
 
@@ -166,7 +166,7 @@ statistics          : {tx_bytes=0, tx_packets=0}
 
 疎通確認する。
 
-![](./02_ping.png)
+![](fig/02_ping.png)
 
 ### Suricata の設定
 `/etc/suricata/suricata.yaml` で `HOME_NET` を設定する。
@@ -190,7 +190,7 @@ Suricata を起動し、アラートを監視する。
 
 問題なくアラートが発出されることが確認された。
 
-![](./03_test_alert.png)
+![](fig/03_test_alert.png)
 
 ## Elasticsearch との連携
 Suricata をインストールした VM に Elastic Agent をインストールすることで、Suricata のアラートを Elasticsearch で管理する。
@@ -198,11 +198,11 @@ Suricata をインストールした VM に Elastic Agent をインストール�
 ### Elastic Agent のインストール
 [Elasticsearch の導入](../Elasticsearch/README.md) を参照しながらインストールする。今回は、以下のような policy を作成する。
 
-![](./04_suricata-policy.png)
+![](fig/04_suricata-policy.png)
 
 Agent をインストールすると、Dashboards から Suricata のログを確認できる。
 
-![](./05_dashboard.png)
+![](fig/05_dashboard.png)
 
 
 

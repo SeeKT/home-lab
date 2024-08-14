@@ -3,8 +3,8 @@
 Windows マシンの P2V の方法 (to Proxmox) を検証する。
 
 ## リンク
-- [Clonezilla](./clonezilla/README.md)
-- [Disk2vhd](./disk2vhd/README.md)
+- [Clonezilla](clonezilla/)
+- [Disk2vhd](disk2vhd/)
 
 ## 注意点
 - Windows の仮想化の場合は、VM 側のハードウェアやオプションの設定を変更しなければ起動できない可能性がある

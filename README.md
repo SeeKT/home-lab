@@ -4,12 +4,12 @@
 ## 概要
 自宅の検証用環境は [Proxmox](https://www.proxmox.com/en/) で構築している。
 
-![](./image/01_proxmox.png)
+![](image/01_proxmox.png)
 
-2024/5時点では、2台のホストでクラスタを構成している。
+2024/8時点では、3台のホストでクラスタを構成している。
 
 ## リンク
-- [免責事項](./policy/README.md)
-- [設計思想](./Philosophy/README.md)
-- [利用方法](./Usage/README.md)
-- [アプリケーション](./Application/README.md)
+- [免責事項](policy/)
+- [設計思想](Philosophy/)
+- [利用方法](Usage/)
+- [アプリケーション](Application/)

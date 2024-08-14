@@ -74,7 +74,7 @@ plugins:
 (caldera) # python server.py --insecure
 ```
 
-![](./01_top.png)
+![](fig/01_top.png)
 
 ## VM起動時に CALDERA を起動するように設定
 `crontab` を使う。
@@ -92,7 +92,7 @@ plugins:
 ## OPNsense を使って自宅ネットワークからアクセスできるように設定
 今回は、以下環境に Caldera を構築したものとする。
 
-![](./02_env.drawio.png)
+![](fig/02_env.drawio.png)
 
 ただし、図中の Home-net はインターネット接続可能なネットワークで、Lab-net は実験用に構築した内部ネットワークである。
 
@@ -109,7 +109,7 @@ Caldera は直接 Home-net に接続していないような構成とする。�
 
 まず、Caldera の VM の Lab-net で、ゲートウェイを OPNsense のアドレス (`192.168.50.1`) に設定する。
 
-![](./03_gateway.png)
+![](fig/03_gateway.png)
 
 
 次に、OPNsense の Firewall > NAT > Port Forward でルールを追加する。今回は、以下のようにルールを設定する。
@@ -134,7 +134,7 @@ Caldera は直接 Home-net に接続していないような構成とする。�
 
 上記のように設定すると、`http://<OPNsenseのアドレス>:28888` で CALDERA にアクセスできる。
 
-![](./04_from_homenet.png)
+![](fig/04_from_homenet.png)
 
 ---
 

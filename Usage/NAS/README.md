@@ -1,14 +1,14 @@
 # NAS の導入
 今回は、Synology の NAS で NFS 共有を用いる。
 
-![](./01_top.png)
+![](fig/01_top.png)
 
 ## ストレージの作成
 ### 手順
 1. ストレージマネージャ > ストレージ でストレージプールを作成
 2. ストレージプールの下にボリュームを作成
 
-![](./02_storage.png)
+![](fig/02_storage.png)
 
 今回は、Proxmox のストレージ用とファイル保存用の2つのボリュームを作成した。
 
@@ -22,7 +22,7 @@
 2. 作成した共有フォルダに対して NFS 権限を設定する
    - クライアントに対して、読み取り/書き込み権限を与える
 
-![](./03_nfs.png)
+![](fig/03_nfs.png)
 
 ## Proxmox 側でストレージとして使うための設定
 ### 手順
@@ -30,9 +30,9 @@
    - ID, Server (IPアドレス/FQDN), Export (サーバの共有ディレクトリのパス) を指定
 2. Edit で Content を編集
 
-![](./04_proxmox_nfs.png)
+![](fig/04_proxmox_nfs.png)
 
-![](./05_nfs_content.png)
+![](fig/05_nfs_content.png)
 
 ## VM で NFS をマウントするための方法
 ### 参考

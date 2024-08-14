@@ -11,7 +11,7 @@
 
 主要な部分の論理構成を以下に示す。
 
-![](./01_config.drawio.png)
+![](fig/01_config.drawio.png)
 
 |マシン|P/V|概要|
 |---|---|---|
@@ -39,30 +39,30 @@
   - ポートミラーリング ([Proxmox側](../Usage/port-mirror/README.md)、[ネットワークスイッチ側](../Usage/Switch/README.md)) によって実現
 
 
-![](./02_point.drawio.png)
+![](fig/02_point.drawio.png)
 
 #### ポイント(1)
 直接 Home-net に接続していない win10-target に対して VNC 接続可能にするため、Firewall で NAPT の設定をしている。具体的な設定は [VNC](../Application/vnc/README.md) に記載している。
 
-![](./03_point_01.png)
+![](fig/03_point_01.png)
 
 #### ポイント(2)
 実験線に接続した機器のログを Elasticsearch に集約するように設定した。実験中に発生したログを一元管理するのが目的である。
 
-![](./04_point_02.png)
+![](fig/04_point_02.png)
 
 #### ポイント(3)
 Exp-net (VLAN 100) に接続したホスト間の通信を IDS でキャプチャ可能にした。VM間の通信も物理機器とVMの間の通信もキャプチャ可能にしたのがポイントである。
 
-![](./05_point_03_1.png)
+![](fig/05_point_03_1.png)
 
-![](./06_point_03_2.png)
+![](fig/06_point_03_2.png)
 
 
 ### 物理構成
 次に、上記ポイントを実現するための実験線の物理構成を述べる。
 
-![](./07_env.drawio.png)
+![](fig/07_env.drawio.png)
 
 この構成および実施した設定のポイントを以下に示す。
 

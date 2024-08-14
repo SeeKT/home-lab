@@ -21,7 +21,7 @@ Windows に VNC サーバを導入し、リモートから操作可能にする�
 ## 検証環境
 今回は、以下検証環境を構築した。
 
-![](./01_env.drawio.png)
+![](fig/01_env.drawio.png)
 
 ただし、図中の Home-net はインターネット接続可能なネットワークで、Lab-net, Exp-net は実験用に構築した内部ネットワークである。
 
@@ -61,22 +61,22 @@ Remote Viewer を起動し、以下アドレスで接続。
 
 `vnc://<VNCサーバのアドレス>:5900`
 
-![](./02_vnc_viewer.png)
+![](fig/02_vnc_viewer.png)
 
 パスワードが要求されるのでパスワードを入力する。
 
-![](./03_authentication.png)
+![](fig/03_authentication.png)
 
 認証に成功すると接続できる。
 
-![](./04_vnc_connection.png)
+![](fig/04_vnc_connection.png)
 
 ## OPNsense を使って自宅ネットワークからアクセスできるように設定
 今回、`win10-target` は直接 Home-net に接続せず、Lab-net での実験用に使うのを想定しているが、Home-net の機器からもリモートで接続可能にしたい。そこで、[Caldera](../Caldera/README.md) でしたのと同様に OPNsense で Port Forward 設定をする。
 
 まず、`win10-target` で IP アドレスを固定する際にデフォルトゲートウェイを OPNsense の Lab-net 側にする。
 
-![](./05_ip.png)
+![](fig/05_ip.png)
 
 次に、OPNsense の Firewall > NAT > Port Forward でルールを追加する。今回は、以下のようにルールを設定する。
 
@@ -103,11 +103,11 @@ Remote Viewer を起動し、以下アドレスで接続。
 
 UltraVNC Viewer で、`<OPNsense の IPアドレス>:<転送先ポート>` として接続する。
 
-![](./06_ultravnc_win11.png)
+![](fig/06_ultravnc_win11.png)
 
 パスワードを入力すると接続できる。
 
-![](./07_vnc_home-net.png)
+![](fig/07_vnc_home-net.png)
 
 
 ---

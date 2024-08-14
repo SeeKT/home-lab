@@ -2,16 +2,16 @@
 Proxmox 環境の利用方法について。
 
 ## リンク
-- [最初にやること](./initial/README.md)
-- [クラスタの構築](./cluster/README.md)
-- [既存の仮想マシンのインポート](./import/README.md)
-- [NASの導入](./NAS/README.md)
-- [VLANの設定](./VLAN/README.md)
-- [VMの登録解除](./Unassign/README.md)
-- [ポートミラーリング設定](./port-mirror/README.md)
-- [スイッチングハブ](./Switch/README.md)
-- [バックアップ](./backup/README.md)
-- [P2V](./p2v/README.md)
+- [最初にやること](initial/)
+- [クラスタの構築](cluster/)
+- [既存の仮想マシンのインポート](import/)
+- [NASの導入](NAS/)
+- [VLANの設定](VLAN/)
+- [VMの登録解除](Unassign/)
+- [ポートミラーリング設定](port-mirror/)
+- [スイッチングハブ](Switch/)
+- [バックアップ](backup/)
+- [P2V](p2v/)
 
 ---
 

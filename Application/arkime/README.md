@@ -16,7 +16,7 @@
 ## 環境
 以下環境の debian-suricata 上に導入する。
 
-![](./01_env.png)
+![](fig/01_env.png)
 
 Arkime は内部データベースとして Elasticsearch を使うが、同一ホストではなく外部にある Elasticsearch と連携できないか検討する。
 

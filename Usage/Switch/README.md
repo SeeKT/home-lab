@@ -26,7 +26,7 @@ VLAN 対応のネットワークスイッチとして、[NETGEAR ギガビット
 ## 構成
 以下のような構成の実験線を実現する。
 
-![](./01_env.drawio.png)
+![](fig/01_env.drawio.png)
 
 `win10-target` は物理機器で、実験線用の Network Switch で、VLAN 50 と VLAN 100 のポートに接続している。各機器の NIC と IP アドレスの対応を以下に示す。
 
@@ -55,7 +55,7 @@ IEEE 802.1Q のタグVLANを設定する。
 ### VLAN作成
 VLAN > 802.1Q > 拡張 > VLANポートメンバーで、VLAN ID を作成する。
 
-![](./02_create_vlan.png)
+![](fig/02_create_vlan.png)
 
 
 ### VLANメンバーシップ
@@ -74,7 +74,7 @@ VLAN > 802.1Q > 拡張 > VLANポートメンバーで、VLAN ID を作成する�
 ### Port VLAN ID (PVID) の設定
 PC などから VLAN タグが付与されない通信をスイッチが受信した場合に転送する VLAN ID を設定する。今回は以下のように設定する。
 
-![](./03_pvid.png)
+![](fig/03_pvid.png)
 
 ## ポートミラーリング (スイッチ側)
 ### ポートミラーリングの設定
@@ -86,7 +86,7 @@ PC などから VLAN タグが付与されない通信をスイッチが受信�
 - ミラーリング先ポート：7
 - ミラーリング元ポート：3
 
-![](./04_mirror.png)
+![](fig/04_mirror.png)
 
 ### ポートミラーリングのテスト (1)
 #### 物理 NIC
@@ -126,7 +126,7 @@ tcpdump: listening on enx000ec6954922, link-type EN10MB (Ethernet), snapshot len
 #### VM
 次に、VM (`debian-suricata`) でキャプチャ可能か確認する。
 
-![](./05_capture_vm.png)
+![](fig/05_capture_vm.png)
 
 VM では `win10-target` から `debian-caldera` への ICMP echo request しか受け取れていない。全くキャプチャできないこともある。物理 NIC で受け取ったパケットをすべて bridge に転送したいので、OVS Bridge 側でもポートミラーリング設定を行う。
 
@@ -153,7 +153,7 @@ aa637ff8-b46c-4804-adc4-21317f195309
 ### ポートミラーリングのテスト (2)
 上記のようにミラーリング設定を行った後に、もう一度 VM 側でキャプチャ可能か確認する。
 
-![](./06_capture_success.png)
+![](fig/06_capture_success.png)
 
 問題なくキャプチャされていることが確認された。
 
