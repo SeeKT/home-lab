@@ -1,2 +1,5 @@
 *.sh
 *.drawio
+.env
+typescript
+backup/
