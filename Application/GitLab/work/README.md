@@ -46,7 +46,7 @@ $ sudo netplan apply
 
 ### SSH の設定
 ```
-$ sudo apt install docker
+$ sudo apt install ssh
 ```
 
 SSH はポート番号を 22 から 10022 に変更する。
@@ -78,7 +78,7 @@ mercury.pve.home:/volume2/Mars  /mnt/Mars   nfs defaults    0   0
 ```
 
 ### Docker の設定
-[Install Docker Engine on Ubuntu]([../../Docker/](https://docs.docker.com/engine/install/ubuntu/)) に記載の通りにインストール。
+[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) に記載の通りにインストール。
 
 ## GitLab の立ち上げ
 ```
