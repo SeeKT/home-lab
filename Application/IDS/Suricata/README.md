@@ -2,6 +2,7 @@
 [Suricata](https://suricata.io/) を導入し、実験線を監視可能にする。
 
 - [Suricata](#suricata)
+  - [(2024/10 更新) apt を使ったインストール](#202410-更新-apt-を使ったインストール)
   - [インストール](#インストール)
     - [依存関係にあるパッケージのインストール](#依存関係にあるパッケージのインストール)
     - [ダウンロードとインストール](#ダウンロードとインストール)
@@ -17,6 +18,9 @@
   - [Elasticsearch との連携](#elasticsearch-との連携)
     - [Elastic Agent のインストール](#elastic-agent-のインストール)
 
+
+## (2024/10 更新) apt を使ったインストール
+[apt を使ったインストール](suricata-apt/) に記載。以下、古い情報のため注意。
 
 ## インストール
 Suricata Docs の [3. Installation](https://docs.suricata.io/en/suricata-6.0.19/install.html) を参照しながらインストールする。
@@ -208,4 +212,4 @@ Agent をインストールすると、Dashboards から Suricata のログを�
 
 ---
 
-[Application](../README.md)
+[IDS](../README.md)

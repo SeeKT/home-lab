@@ -20,12 +20,13 @@
 ### IP アドレスの固定
 今回は、`192.168.10.60/24` に固定する。
 
-`/etc/netplan/01-changed.yaml` を以下のように作成する。
+`/etc/netplan/99-settings.yaml` を以下のように作成する。
 
 ```yaml
 network:
     ethernets:
         ens18:
+            dhcp4: false
             addresses:
             - 192.168.10.60/24
             nameservers:

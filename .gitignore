@@ -1,4 +1,3 @@
-*.sh
 *.drawio
 .env
 typescript
