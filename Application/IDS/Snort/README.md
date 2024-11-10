@@ -63,7 +63,7 @@ alert_json =
 
 ## Run
 ```
-$ sudo #{SNORTDIR}/bin/snort -c #{SNORTDIR}/etc/snort/snort.lua -i #{IF}
+$ sudo #{SNORTDIR}/bin/snort -c #{SNORTDIR}/etc/snort/snort.lua -i #{IF} -l #{LOGDIR}
 ```
 
 ---
