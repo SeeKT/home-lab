@@ -13,6 +13,9 @@ Proxmox 環境の利用方法について。
 - [バックアップ](backup/)
 - [P2V](p2v/)
 - [VMの容量拡張](extend/)
+- [NetworkManagerの設定](NetworkManager/)
+- [Proxmox のユーザ管理について](management/)
+  - [Proxmox の権限設定](management/permissions/)
 
 ---
 

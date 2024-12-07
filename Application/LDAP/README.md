@@ -19,13 +19,12 @@ GitLab で LDAPアカウントを使うために、LDAPサーバを導入する�
       - [Apache2 の設定ファイルの編集](#apache2-の設定ファイルの編集)
       - [LDAP Account Manager の設定](#ldap-account-manager-の設定)
   - [LDAPクライアントの設定](#ldapクライアントの設定)
-  - [Proxmox に LDAP 認証を設定](#proxmox-に-ldap-認証を設定)
 
 
 ## 参考
 - [OpenLDAP : LDAP サーバーの設定](https://www.server-world.info/query?os=Debian_12&p=openldap&f=1)
 - [How to Install OpenLDAP Server and LDAP Account Manager on Debian 12](https://www.howtoforge.com/how-to-install-openldap-server-on-debian-12/)
-- [User Management - Authentication Realms](https://pve.proxmox.com/pve-docs/chapter-pveum.html#pveum_authentication_realms)
+
 
 ## インストール
 ```
@@ -185,26 +184,6 @@ LAM構成設定 > サーバープロファイルの編集 で、パスワード�
    ```
    # systemctl restart nscd nslcd
    ```
-
-## Proxmox に LDAP 認証を設定
-Datacenter > Permissions > Realms で LDAP Server を設定可能。
-
-![](fig/05_proxmox.png)
-
-- Realm: `<username>@<realm>` で LDAP にログインする
-  - 今回は `ldap.pve.home`
-- Base Domain Name: ユーザを検索するディレクトリ
-  - 今回は `DC=pve,DC=home`
-- User Attribute Name: ユーザーがログインする際に使用するユーザー名を含む LDAP 属性
-  - 今回は `OU=people,DC=pve,DC=home`
-- Default
-- Server: LDAP をホストするサーバ
-  - 今回は `ldap.pve.home`
-- Fallback Server
-- Port: LDAP が listen するポート
-  - 今回は `389`
-- Mode: モード
-  - 今回は Default (LDAP)
 
 ---
 

@@ -13,12 +13,14 @@
     - [AD への追加](#ad-への追加)
       - [Windows 10](#windows-10)
       - [Windows 7](#windows-7)
+    - [DNS 設定](#dns-設定)
 
 ## 参考
 - [ハッカーの技術書](http://www.ruffnex.net/kuroringo/HackerTechnical/)
 - [Windows 2019 guest best practices](https://pve.proxmox.com/wiki/Windows_2019_guest_best_practices)
 - [Proxmox上でWindows Server 2022を立ち上げてみた](https://qiita.com/yusaku-creative/items/74e0f4f88229a167d575)
 - [WindowsServer2019でActiveDirectoryを構成する](https://qiita.com/yuichi1992_west/items/a3c6bc33a85895da47dd)
+- [Windows Server 2019 Active Directory環境のDNSお勧め設定を紹介](https://www.rem-system.com/win2019-dns-setting/)
 
 ## 構築
 ### Windows Server のダウンロード
@@ -158,6 +160,35 @@ VM を起動し、OS インストール作業を進める。起動前に Boot Or
 ドメイン参加後に再起動すると、ドメインのユーザとしてログイン可能。
 
 ![](fig/26_win7_domain.png)
+
+### DNS 設定
+サーバーマネージャー > DNS でサーバーを選択して右クリック > DNS マネージャー
+
+逆引き参照ゾーン > 操作 > 新しいゾーン でウィザードを開始
+
+- ゾーンの種類：プライマリゾーン
+  - Active Directory にゾーンを格納する
+- Active Directory ゾーン レプリケーション スコープ：このドメインのドメインコントローラで実行しているすべてのDNSサーバー
+- 逆引き参照ゾーン名：IPv4逆引き参照ゾーン
+- 逆引き参照ゾーン名
+  - ネットワークID: 192.168.100
+- 動的更新：セキュリティで保護された動的更新のみを許可する (Active Directory 用に推奨)
+
+作成すると逆引き参照ゾーンに登録されるが、この状態では `nslookup` を実行してもエラーが出る。
+
+![](fig/27_dns.png)
+
+これは逆引き参照ゾーンにドメインコントローラのIPアドレスが登録されていないためである。再起動時に登録されるが、`ipconfig` コマンドでも登録できる。
+
+```
+> ipconfig /registerdns
+```
+
+実行すると逆引き参照ゾーンにドメインコントローラのIPアドレスが登録され、`nslookup` でアドレスを引くことができる。
+
+![](fig/28_ptr.png)
+
+
 
 ---
 

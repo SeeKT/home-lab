@@ -6,6 +6,7 @@
   - [インストール](#インストール)
   - [設定](#設定)
   - [トラブルシューティング](#トラブルシューティング)
+  - [環境構築例](#環境構築例)
 
 ## 参考
 - [FreeBSDベースのファイアウォールOS「OPNsense」（インストール編）](https://knowledge.sakura.ad.jp/16674/)
@@ -24,13 +25,17 @@
 ![](fig/01_after_install.png)
 
 ## 設定
-[OPNsense の設定](./settings/README.md) に記載。
+[OPNsense の設定](settings/) に記載。
 
 ## トラブルシューティング
-[OPNsense のトラブルシューティング](./troubleshoot/README.md) に記載。
+[OPNsense のトラブルシューティング](troubleshoot/) に記載。
+
+## 環境構築例
+[OPNsense を用いた環境構築例](example/) に記載。
 
 ---
 
 - [Application](../README.md)
-- [OPNsense の設定](./settings/README.md)
-- [OPNsense のトラブルシューティング](./troubleshoot/README.md)
+- [OPNsense の設定](settings/)
+- [OPNsense のトラブルシューティング](troubleshoot/)
+- [OPNsense を用いた環境構築例](example/)

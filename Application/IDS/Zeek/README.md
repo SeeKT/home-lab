@@ -25,6 +25,15 @@ interface=#{IF}
 #{ADDRESS}  #{DESCRIPTION}
 ```
 
+### local.zeek
+Elastic Agent との連携のためには、JSON 形式でログを出力する必要がある。`/opt/zeek/share/zeek/site/local.zeek` に以下を追記する。
+
+```
+@load policy/tuning/json-logs.zeek
+```
+
+
+
 ## `zeekctl`
 `/opt/zeek/etc/zeekctl.cfg` でログの出力先等を変更する。
 
