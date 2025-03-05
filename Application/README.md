@@ -20,6 +20,7 @@
 - [Lynis](lynis/)
 - [メールサーバ](mail/)
 - [Active Directory](AD/)
+- [管理用サーバ](management-server/)
 
 ---
 
