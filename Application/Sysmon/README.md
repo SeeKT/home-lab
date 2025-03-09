@@ -16,6 +16,21 @@ Windows に対して Elastic Agent をインストールし、Integration に Wi
 
 ![](fig/02_elastic_sysmon.png)
 
+## ログ取得設定
+設定ファイルを読み込ませることで Sysmon の設定が可能。
+
+例えば、[olafhartong / sysmon-modular](https://github.com/olafhartong/sysmon-modular) をベースに設定した場合 (今回は [sysmonconfig-with-filedelete.xml](https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig-with-filedelete.xml) を例にする)
+
+```
+> .\Sysmon64.exe -c sysmonconfig-with-filedelete.xml
+```
+
+で設定できる。設定した際のログを1hほど取得した。
+
+![](fig/03_sysmon_config.png)
+
+毎分2500~3000ほどログが出ていることが確認できた (設定しなければ毎分100未満)。
+
 ---
 
 [Application](../README.md)
