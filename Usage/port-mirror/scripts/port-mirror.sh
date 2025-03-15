@@ -1,11 +1,11 @@
 #!/bin/bash
 # Execute:
-# ./port-mirror.sh #{CSVPATH} #{BRIDGE}
+# ./port-mirror.sh #{CSVPATH} #{BRIDGE} #{SELECTVLAN} #{OUTPUTVLAN}
 
 # Check Num
-if [ $# -lt 3 ]; then
+if [ $# -lt 4 ]; then
     echo "[ERROR] Execute script"
-    echo "./port-mirror.sh #{CSVPATH} #{BRIDGE} #{VLAN}"
+    echo "./port-mirror.sh #{CSVPATH} #{BRIDGE} #{SELECTVLAN} #{OUTPUTVLAN}"
     exit 1
 fi
 
@@ -17,7 +17,8 @@ if [ ! -e "$CSVPATH" ]; then
 fi
 
 BRIDGE=$2
-VLAN=$3
+SELECTVLAN=$3
+OUTPUTVLAN=$4
 
 # Initialize COMMAND, ID, TARGET, and OUTPUT
 COMMAND="ovs-vsctl -- set bridge $BRIDGE mirrors=@$BRIDGE-m --"
@@ -64,7 +65,7 @@ echo "Execute the following $NUMOP commands..."
 for OUT in "${OP[@]}"
 do
     OUTPUT="output-port=@$OUT"
-    EXECUTION="${COMMAND} ${ID} ${TARGETDST} ${TARGETSRC} ${OUTPUT} output-vlan=$VLAN"
+    EXECUTION="${COMMAND} ${ID} ${TARGETDST} ${TARGETSRC} ${OUTPUT} select-vlan=$SELECTVLAN output-vlan=$OUTPUTVLAN"
     EXECUTION=$(echo "$EXECUTION" | sed "s/@$BRIDGE-m/@$BRIDGE-m-$OUT/g")
     EXECUTION=$(echo "$EXECUTION" | sed "s/name=$BRIDGE-mirror/name=$BRIDGE-mirror-$OUT/g")
     echo "$EXECUTION"
