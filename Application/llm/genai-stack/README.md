@@ -6,9 +6,12 @@
 Ollama server と genai-stack を立ち上げるホストを分ける。
 
 - Ollama server (Windows 11)
+  - NVIDIA GeForce RTX 3060
 - genai-stack (xUbuntu 24)
 
 ### Ollama server
+[対応する GPU](https://ollama.qubitpi.org/gpu/) で cuda をインストール済とする。
+
 [Download Ollama](https://ollama.com/download/windows) からダウンロード。
 
 [🌐 【Windows】Ollamaをローカルネットワークからアクセス可能にする方法（環境変数GUI & CORS設定版）](https://qiita.com/FumiyaHr/items/43d27268633cd48cdca9) を参照し、以下のように環境変数を追加。
