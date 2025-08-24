@@ -21,6 +21,7 @@
 - [メールサーバ](mail/)
 - [Active Directory](AD/)
 - [管理用サーバ](management-server/)
+- [SoftEther VPN](SoftEther/)
 
 ---
 
