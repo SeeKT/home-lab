@@ -32,3 +32,7 @@ PasswordAuthentication no
 参考: [とほほのtmux入門](https://www.tohoho-web.com/ex/tmux.html)
 
 tmux を使うと、ターミナルを終了してもセッションが維持される。
+
+---
+
+[Top](../../README.md)

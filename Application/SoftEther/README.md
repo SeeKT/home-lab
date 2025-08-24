@@ -374,3 +374,6 @@ $ sudo nmcli connection up netplan-vpn_vnic-001
 
 これで IPv4 アドレスもふられたが、疎通できない (未解決)。
 
+---
+
+[Top](../../README.md)
