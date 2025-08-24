@@ -16,6 +16,7 @@ Proxmox 環境の利用方法について。
 - [NetworkManagerの設定](NetworkManager/)
 - [Proxmox のユーザ管理について](management/)
   - [Proxmox の権限設定](management/permissions/)
+- [ssh関連メモ](ssh/)
 
 ---
 
